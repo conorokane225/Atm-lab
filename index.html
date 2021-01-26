@@ -1,11 +1,19 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-
+    <head>
+    <title>
+        atm project
+    </title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
 </head>
-
 <body>
+    <!--Heading Portion of page-->
+    <h1>Conor's ATM</h1>
+    <h2>Date & Time</h2>
+    <p id="p1"></p>
+<!--Atm Portion of page-->
     <div id="start"> 
         <label>Input your pin:</label>
         <input id="pinput"></input>
@@ -144,6 +152,15 @@
             document.getElementById("start").style.display = "none"; //get the HTML with the id="start" and set it's style="display:none;" 
             document.getElementById("menu").style.display = "block";//get the HTML with the id ="menu" andset it's style="display:block"
         }
+
+        let today = new Date();
+
+let date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+
+let time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+
+let dateTime = date+' '+time;
+document.getElementById("p1").innerHTML = dateTime;
     </script>
 
 </body>
